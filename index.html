@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Me To You</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital@0;1&family=Space+Mono&family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-romantic">
+
+<div class="sparkles" id="sparkles"></div>
+
+<header class="site-header">
+  <div class="page-title">From Me To You</div>
+  <div class="subtitle">an anonymous letter, sealed with heart</div>
+  <div class="deco-line"></div>
+
+  <div class="step-indicator" id="stepIndicator">
+    <span class="active" id="si-0">Envelope</span>
+    <div class="dot"></div>
+    <span id="si-1">Letter</span>
+    <div class="dot"></div>
+    <span id="si-2">Seal</span>
+  </div>
+</header>
+
+<main class="main">
+
+  <!-- STEP 1: Envelope -->
+  <div class="step-card active" id="step-0">
+    <div class="section-label">Choose your vibe</div>
+    <div class="theme-grid">
+      <button class="theme-pill t-romantic active" onclick="setTheme('romantic', this)">Romantic</button>
+      <button class="theme-pill t-modern" onclick="setTheme('modern', this)">Modern</button>
+      <button class="theme-pill t-whimsical" onclick="setTheme('whimsical', this)">Whimsical</button>
+      <button class="theme-pill t-poetic" onclick="setTheme('poetic', this)">Poetic</button>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Envelope Preview -->
+    <div class="section-label">Decorate your envelope</div>
+    <div class="envelope-stage">
+      <div class="envelope-wrap">
+        <div class="env-body" id="envBody">
+          <div class="env-flap" id="envFlap"></div>
+          <svg class="env-pattern" id="envPattern" viewBox="0 0 340 220" preserveAspectRatio="xMidYMid slice"></svg>
+          <div class="env-fold-left"></div>
+          <div class="env-fold-right"></div>
+
+          <div class="env-stamp-area" id="stampArea">
+            <div class="stamp placed" id="placedStamp" style="display:none; font-size:20px;"></div>
+          </div>
+
+          <div class="env-to-field">
+            <span class="env-to-label">To</span>
+            <div class="env-to-name" id="envToDisplay">someone dear</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls-grid">
+      <div class="control-group">
+        <div class="section-label">Envelope color</div>
+        <div class="color-swatches" id="colorSwatches">
+          <div class="swatch active" style="background:#fde8cc;" data-color="#fde8cc" data-flap="#f5c9a0" onclick="setEnvColor(this)"></div>
+          <div class="swatch" style="background:#d4e8f0;" data-color="#d4e8f0" data-flap="#b0d0e0" onclick="setEnvColor(this)"></div>
+          <div class="swatch" style="background:#ecd4f0;" data-color="#ecd4f0" data-flap="#d4a8e8" onclick="setEnvColor(this)"></div>
+          <div class="swatch" style="background:#d4f0d8;" data-color="#d4f0d8" data-flap="#a8d8b0" onclick="setEnvColor(this)"></div>
+          <div class="swatch" style="background:#f0d4d4;" data-color="#f0d4d4" data-flap="#e8b0b0" onclick="setEnvColor(this)"></div>
+          <div class="swatch" style="background:#1a1a2e;" data-color="#1a1a2e" data-flap="#2d2d4e" onclick="setEnvColor(this)"></div>
+          <div class="swatch" style="background:#fff8e8;" data-color="#fff8e8" data-flap="#f0e0c0" onclick="setEnvColor(this)"></div>
+          <div class="swatch" style="background:#4e0303;" data-color="#4e0303" data-flap="#1a1a2e" onclick="setEnvColor(this)"></div>
+        </div>
+
+        <div class="section-label" style="margin-top:1rem;">Pattern</div>
+        <div class="pattern-pills">
+          <button class="pattern-pill active" onclick="setPattern('none', this)">None</button>
+          <button class="pattern-pill" onclick="setPattern('dots', this)">Dots</button>
+          <button class="pattern-pill" onclick="setPattern('lines', this)">Lines</button>
+          <button class="pattern-pill" onclick="setPattern('stars', this)">Stars</button>
+          <button class="pattern-pill" onclick="setPattern('hearts', this)">Hearts</button>
+          <button class="pattern-pill" onclick="setPattern('waves', this)">Waves</button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="section-label">Stamp</div>
+        <div class="stamp-picker">
+          <div class="stamp-opt" onclick="pickStamp('🌹', this)">🌹</div>
+          <div class="stamp-opt" onclick="pickStamp('🌙', this)">🌙</div>
+          <div class="stamp-opt" onclick="pickStamp('✉️', this)">✉️</div>
+          <div class="stamp-opt" onclick="pickStamp('🦋', this)">🦋</div>
+          <div class="stamp-opt" onclick="pickStamp('🎗️', this)">🎗️</div>
+          <div class="stamp-opt" onclick="pickStamp('👻', this)">👻</div>
+          <div class="stamp-opt" onclick="pickStamp('⭐', this)">⭐</div>
+          <div class="stamp-opt" onclick="pickStamp('🌸', this)">🌸</div>
+          <div class="stamp-opt" onclick="pickStamp('🕊️', this)">🕊️</div>
+          <div class="stamp-opt" onclick="pickStamp('💫', this)">💫</div>
+          <div class="stamp-opt" onclick="pickStamp('🎶', this)">🎶</div>
+          <div class="stamp-opt" onclick="pickStamp('🤍', this)">🤍</div>
+          <div class="stamp-opt" onclick="pickStamp('🖤', this)">🖤</div>
+          <div class="stamp-opt" onclick="pickStamp('💎', this)">💎</div>
+          <div class="stamp-opt" onclick="pickStamp('🫂', this)">🫂</div>
+          <div class="stamp-opt" onclick="pickStamp('🦢', this)">🦢</div>
+          <div class="stamp-opt" onclick="pickStamp('💖', this)">💖</div>
+          <div class="stamp-opt" onclick="pickStamp('🪞', this)">🪞</div>
+          <div class="stamp-opt" onclick="pickStamp('🍓', this)">🍓</div>
+          <div class="stamp-opt" onclick="pickStamp('💍', this)">💍</div>
+          <div class="stamp-opt" onclick="pickStamp('🐣', this)">🐣</div>
+          <div class="stamp-opt" onclick="pickStamp('🍉', this)">🍉</div>
+          <div class="stamp-opt" onclick="pickStamp('🍒', this)">🍒</div>
+          <div class="stamp-opt" onclick="pickStamp('🐞', this)">🐞</div>
+          <div class="stamp-opt" onclick="pickStamp('✨', this)">✨</div>
+          <div class="stamp-opt" onclick="pickStamp('🥹', this)">🥹</div>
+          <div class="stamp-opt" onclick="pickStamp('👾', this)">👾</div>
+          <div class="stamp-opt" onclick="pickStamp('🫀', this)">🫀</div>
+        </div>
+
+        <div class="section-label" style="margin-top:1rem;">To</div>
+        <input class="to-input" id="toInput" placeholder="their name or a nickname..." maxlength="30" oninput="updateToName(this.value)">
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-primary" onclick="goStep(1)">Write the letter →</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: Letter -->
+  <div class="step-card" id="step-1">
+    <div class="section-label">Your letter</div>
+    <p id="letterSubtext" style="font-size:13px; color:#9a8070; margin-bottom:1rem; font-style:italic;">No names, no traces. Just your words.</p>
+
+    <div class="control-group" id="fontPickerGroup" style="margin-bottom: 1rem;">
+      <div class="section-label">Font Style</div>
+      <div class="font-picker" style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <button class="btn-ghost font-opt active" style="font-family: inherit; padding: 4px 12px;" onclick="setFont('', this)">Theme Default</button>
+        <button class="btn-ghost font-opt" style="font-family: 'Lora', serif; padding: 4px 12px;" onclick="setFont('\'Lora\', serif', this)">Lora</button>
+        <button class="btn-ghost font-opt" style="font-family: 'Playfair Display', serif; padding: 4px 12px;" onclick="setFont('\'Playfair Display\', serif', this)">Playfair</button>
+        <button class="btn-ghost font-opt" style="font-family: 'Space Mono', monospace; padding: 4px 12px;" onclick="setFont('\'Space Mono\', monospace', this)">Mono</button>
+        <button class="btn-ghost font-opt" style="font-family: 'Pacifico', cursive; padding: 4px 12px;" onclick="setFont('\'Pacifico\', cursive', this)">Pacifico</button>
+        <button class="btn-ghost font-opt" style="font-family: 'Quicksand', sans-serif; padding: 4px 12px;" onclick="setFont('\'Quicksand\', sans-serif', this)">Quicksand</button>
+      </div>
+    </div>
+
+    <div class="letter-area-wrap">
+      <div class="letter-paper">
+        <textarea class="letter-textarea" id="letterText" placeholder="Dear one,&#10;&#10;There's something I've always wanted to say..." oninput="countWords()"></textarea>
+      </div>
+    </div>
+
+    <div class="word-counter" id="wordCounter">0 words</div>
+
+    <div class="btn-row" id="step1Buttons">
+      <button class="btn-ghost" onclick="goStep(0)">← Back</button>
+      <button class="btn-primary" id="sealBtn" onclick="sealLetter()" disabled>Seal the letter →</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: Sealed -->
+  <div class="step-card" id="step-2">
+    <div class="sealed-view">
+      <div class="sealed-envelope" id="sealedEnvelope">
+        <!-- Rendered via JS -->
+      </div>
+      <div class="sealed-msg" id="sealedMsgTitle">Your letter is sealed.</div>
+      <div class="sealed-sub" id="sealedSub">It floats now, anonymous and true, waiting to be felt by the one it was always meant for.</div>
+      
+      <div id="linkContainer" style="margin-top: 1.5rem; display: flex; gap: 10px; justify-content: center; flex-direction: column; align-items: center;">
+        <div class="section-label">Share this link to send your letter</div>
+        <div style="display: flex; gap: 10px;">
+          <input type="text" id="shareLink" readonly style="padding: 8px 12px; border: 1px solid #ddd; border-radius: 4px; width: 250px; background: transparent; color: inherit; font-family: inherit; font-size: 14px;">
+          <button class="btn-primary" onclick="copyLink(this)">Copy Link</button>
+        </div>
+      </div>
+
+      <button class="btn-new" onclick="startOver()" id="btnStartOver">Write another letter</button>
+    </div>
+  </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
