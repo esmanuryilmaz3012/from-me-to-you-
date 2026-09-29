@@ -2,7 +2,7 @@
 A digital space to express the unspoken.
 
 ### *The Story Behind the Project*
-I used to find it really hard to express myself with words when talking about sensitive topics like my feelings. How I felt didn't matter; I used to cry whenever I was supposed to talk about my emotions. This often led to embarrassment, which made it even harder to speak coherently.
+I used to find it really hard to express myself with words when talking about sensitive topics like my feelings. How I felt didn't matter; I used to cry whenever I was supposed to talk about my emotions. This often led to embarrassment, which made it even harder to speak coherently when I was trying to express myself.
 
 Thankfully, I’ve grown past that. But back then, letters were my sanctuary. I would write long texts to resolve conflicts or simply to vent—it was the only way I could explain myself without tears. This project is a creative tribute to that memory. I wanted to turn a personal struggle into something beautiful and functional for others who might feel the same way.
 
